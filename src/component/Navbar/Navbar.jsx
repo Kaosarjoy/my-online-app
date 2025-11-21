@@ -26,8 +26,10 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <img src={logoImg} alt="LogoImage" className="w-10" />
+      <NavLink to='/home' className='flex justify-between items-center'>
+          <img src={logoImg} alt="LogoImage" className="w-10" />
         <h1 className='text-primary font-bold'>HERO.IO</h1>
+      </NavLink>
       </div>
 
       <div className="navbar-center hidden lg:flex">
