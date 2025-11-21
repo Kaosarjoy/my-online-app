@@ -28,7 +28,8 @@ const router = createBrowserRouter([
     },
     {
       path:'/bookDetails/:id',
-      Component:BookDetails
+      Component:BookDetails,
+     loader:()=>fetch('/product.json')
     },
     {
       path:'/installation',

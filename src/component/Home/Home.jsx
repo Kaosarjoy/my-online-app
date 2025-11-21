@@ -4,9 +4,9 @@ import appStoreImg from '../../assets/app.png'
 import bannerImg from '../../assets/hero.png'
 import Products from '../Products/Products';
 import { NavLink } from 'react-router';
-
+import logoImg from '../../assets/logo.png';
 const Home = () => {
-  // এখানে promise টা return করতে হবে!
+ 
   const productPromise = fetch('/public/product.json').then(res => res.json());
 
   return (
@@ -20,16 +20,30 @@ const Home = () => {
           At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter,
           and more exciting. Our goal is to turn your ideas into digital experiences that truly make an impact.
         </p>
+        
+        
         <div className="hero-buttons mt-6 flex justify-center gap-4">
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg flex items-center gap-2">
-            <img src={googleAppImg} alt="Google Play" className="w-10 h-10" />
-            Google Play
-          </button>
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg flex items-center gap-2">
-            <img src={appStoreImg} alt="App Store" className="w-10 h-10" />
-            App Store
-          </button>
-        </div>
+  <div>
+    <a href="https://play.google.com/store/games?hl=en" target="blank" >
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg flex items-center gap-2">
+        <img src={googleAppImg} alt="Google Play" className="w-10 h-10" />
+        Google Play
+      </button>
+    </a>
+  </div>
+  <div>
+    <a href="https://www.apple.com/app-store/" target="blank" >
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg flex items-center gap-2">
+        <img src={appStoreImg} alt="App Store" className="w-10 h-10" />
+        App Store
+      </button>
+    </a>
+  </div>
+</div>
+
+        
+      
+        
       </div>
 
       {/* Hero Image + Stats */}
@@ -65,9 +79,17 @@ const Home = () => {
         </p>
 
         <Suspense fallback={
-          <div className="flex justify-center py-20">
-            <span className="loading loading-spinner loading-lg text-primary"></span>
-          </div>
+          <div className="flex flex-col items-center py-20 gap-3">
+             <img 
+               src={logoImg} 
+               alt="logo"
+               className="w-14 h-14 animate-pulse"
+             />
+             <h1 className="text-xl font-semibold tracking-widest">
+               Loading...
+             </h1>
+           <span className="loading loading-spinner text-info"></span>
+           </div>
         }>
           <Products productPromise={productPromise} limit={8} />
         </Suspense>

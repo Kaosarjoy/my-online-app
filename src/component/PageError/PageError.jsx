@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PageErrorImg from '../../assets/error-404.png'
-import { NavLink, useNavigate } from 'react-router';
+import {  useNavigate } from 'react-router';
 
 const PageError = () => {
     const navigate = useNavigate()

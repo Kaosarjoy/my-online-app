@@ -5,9 +5,18 @@ import { IoLogoGithub } from 'react-icons/io';
 
 const Navbar = () => {
   const links = <>
-    <li><NavLink to='/home'>Home</NavLink></li>
-    <li><NavLink to='/apps'>Apps</NavLink></li>
-    <li><NavLink to='/installation'>Installation</NavLink></li>
+    <li><NavLink to='/home' className={({ isActive }) =>
+    isActive ? 'text-blue-500 font-bold' : 'text-gray-700'
+  }>
+    Home
+    </NavLink></li>
+    <li>
+      <NavLink to='/apps' className={({isActive})=>
+        isActive ? 'text-blue-500 font-bold' : 'text-gray-700' }>Apps</NavLink>
+      </li>
+    <li><NavLink to='/installation' className={({isActive})=>
+     isActive ? 'text-blue-500 font-bold' : 'text-gray-700' }>
+    Installation</NavLink></li>
   </>;
 
   return (
@@ -39,10 +48,12 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end flex gap-3 items-center">
-        
+       
+        <a href="https://github.com/Kaosarjoy/my-online-app" target='blank'>
         <button className="btn btn-primary btn-sm">
             <IoLogoGithub size={24} />
             Contribute</button>
+        </a>
       </div>
     </div>
   );
