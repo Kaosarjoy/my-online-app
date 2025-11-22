@@ -7,7 +7,7 @@ import { NavLink } from 'react-router';
 import logoImg from '../../assets/logo.png';
 const Home = () => {
  
-  const productPromise = fetch('/public/product.json').then(res => res.json());
+  const productPromise = fetch('/product.json').then(res => res.json());
 
   return (
     <div className="hero-section">
